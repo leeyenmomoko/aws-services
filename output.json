@@ -1,0 +1,129 @@
+{ _remove: [Function: _remove],
+  _add: [Function: _add],
+  _addVerbatimBlock: [Function: _addVerbatimBlock],
+  _getString: [Function: _getString],
+  toString: [Function: toString] }
+80;
+{ _remove: [Function: _remove],
+  _add: [Function: _add],
+  _addVerbatimBlock: [Function: _addVerbatimBlock],
+  _getString: [Function: _getString],
+  toString: [Function: toString] }
+443 ssl;
+{ _remove: [Function: _remove],
+  _add: [Function: _add],
+  _addVerbatimBlock: [Function: _addVerbatimBlock],
+  _getString: [Function: _getString],
+  toString: [Function: toString],
+  try_files: 
+   { _remove: [Function: _remove],
+     _add: [Function: _add],
+     _addVerbatimBlock: [Function: _addVerbatimBlock],
+     _getString: [Function: _getString],
+     toString: [Function: toString] } }
+# for query~ ^/v3/restaurants/quotas?(.*)$ {
+    try_files $uri @redirecrc;
+}
+
+{ _remove: [Function: _remove],
+  _add: [Function: _add],
+  _addVerbatimBlock: [Function: _addVerbatimBlock],
+  _getString: [Function: _getString],
+  toString: [Function: toString],
+  include: 
+   { _remove: [Function: _remove],
+     _add: [Function: _add],
+     _addVerbatimBlock: [Function: _addVerbatimBlock],
+     _getString: [Function: _getString],
+     toString: [Function: toString] },
+  proxy_pass: 
+   { _remove: [Function: _remove],
+     _add: [Function: _add],
+     _addVerbatimBlock: [Function: _addVerbatimBlock],
+     _getString: [Function: _getString],
+     toString: [Function: toString] } }
+@redirecrc {    include proxy.conf;
+    proxy_pass http://quotascluster/?$args;
+}
+
+{ _remove: [Function: _remove],
+  _add: [Function: _add],
+  _addVerbatimBlock: [Function: _addVerbatimBlock],
+  _getString: [Function: _getString],
+  toString: [Function: toString],
+  include: 
+   { _remove: [Function: _remove],
+     _add: [Function: _add],
+     _addVerbatimBlock: [Function: _addVerbatimBlock],
+     _getString: [Function: _getString],
+     toString: [Function: toString] },
+  proxy_pass: 
+   { _remove: [Function: _remove],
+     _add: [Function: _add],
+     _addVerbatimBlock: [Function: _addVerbatimBlock],
+     _getString: [Function: _getString],
+     toString: [Function: toString] } }
+# for 智付寶~ ^/v3/orders/(.+)/payment(.*)$ {
+    include proxy.conf;
+    proxy_pass http://facluster;
+}
+
+{ _remove: [Function: _remove],
+  _add: [Function: _add],
+  _addVerbatimBlock: [Function: _addVerbatimBlock],
+  _getString: [Function: _getString],
+  toString: [Function: toString],
+  include: 
+   { _remove: [Function: _remove],
+     _add: [Function: _add],
+     _addVerbatimBlock: [Function: _addVerbatimBlock],
+     _getString: [Function: _getString],
+     toString: [Function: toString] },
+  proxy_pass: 
+   { _remove: [Function: _remove],
+     _add: [Function: _add],
+     _addVerbatimBlock: [Function: _addVerbatimBlock],
+     _getString: [Function: _getString],
+     toString: [Function: toString] } }
+~ ^/v3/admin/invoice(.*)$ {    include proxy.conf;
+    proxy_pass http://facluster;
+}
+
+{ _remove: [Function: _remove],
+  _add: [Function: _add],
+  _addVerbatimBlock: [Function: _addVerbatimBlock],
+  _getString: [Function: _getString],
+  toString: [Function: toString],
+  return: 
+   { _remove: [Function: _remove],
+     _add: [Function: _add],
+     _addVerbatimBlock: [Function: _addVerbatimBlock],
+     _getString: [Function: _getString],
+     toString: [Function: toString] } }
+~ ^/v2/reservation/get_info/(.*)$ {    return 404;
+}
+
+{ _remove: [Function: _remove],
+  _add: [Function: _add],
+  _addVerbatimBlock: [Function: _addVerbatimBlock],
+  _getString: [Function: _getString],
+  toString: [Function: toString],
+  include: 
+   { _remove: [Function: _remove],
+     _add: [Function: _add],
+     _addVerbatimBlock: [Function: _addVerbatimBlock],
+     _getString: [Function: _getString],
+     toString: [Function: toString] },
+  proxy_pass: 
+   { _remove: [Function: _remove],
+     _add: [Function: _add],
+     _addVerbatimBlock: [Function: _addVerbatimBlock],
+     _getString: [Function: _getString],
+     toString: [Function: toString] } }
+# project php/ {
+#limit_req zone=site burst=500 nodelay;
+    include proxy.conf;
+    proxy_pass http://apicluster/;
+}
+
+{"19----#listen       443 spdy sslapi.eztable.com;\n":{"listen":["80;","443 ssl;"],"location":["# for query~ ^/v3/restaurants/quotas?(.*)$ {\n    try_files $uri @redirecrc;\n}\n","@redirecrc {    include proxy.conf;\n    proxy_pass http://quotascluster/?$args;\n}\n","# for 智付寶~ ^/v3/orders/(.+)/payment(.*)$ {\n    include proxy.conf;\n    proxy_pass http://facluster;\n}\n","~ ^/v3/admin/invoice(.*)$ {    include proxy.conf;\n    proxy_pass http://facluster;\n}\n","~ ^/v2/reservation/get_info/(.*)$ {    return 404;\n}\n","# project php/ {\n#limit_req zone=site burst=500 nodelay;\n    include proxy.conf;\n    proxy_pass http://apicluster/;\n}\n"]}}
